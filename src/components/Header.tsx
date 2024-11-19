@@ -7,7 +7,7 @@ export default function Header() {
   const { language, toggleLanguage } = useLanguage();
 
   return (
-    <header className="bg-gray-800 text-white py-4 sticky top-0 left-0 right-0">
+    <header className="bg-gray-800 text-white py-4 sticky top-0 left-0 right-0 z-20">
       <div className="container mx-auto flex justify-between items-center">
         <div>
           <Link href="/">
@@ -24,7 +24,7 @@ export default function Header() {
             {language === "DE" ? "EN 🇬🇧" : "DE 🇩🇪"}
           </button>
           <Link
-            href="/kontaktiere-uns"
+            href="/contact"
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
           >
             {language === "DE" ? "Kontaktieren Sie uns" : "Contact Us"}

@@ -21,13 +21,25 @@ export default function Datenschutz() {
           heading: "2. Allgemeine Hinweise und Pflichtinformationen",
           content: `
             Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+            Hinweis zur verantwortlichen Stelle: Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist AMG Human Resources und Vermögens GmbH, Seegefelder Weg 353, 13591 Berlin.
           `,
         },
         {
           heading: "3. Datenerfassung auf unserer Website",
-          content: `
-            Cookies und Server-Log-Dateien werden genutzt, um Daten für die Bereitstellung und Analyse unseres Angebots zu erheben. Mehr Informationen finden Sie in den einzelnen Unterpunkten.
-          `,
+          subsections: [
+            {
+              subheading: "Cookies",
+              subcontent: `
+                Diese Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem Rechner keinen Schaden an und enthalten keine Viren. Cookies dienen dazu, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen.
+              `,
+            },
+            {
+              subheading: "Server-Log-Dateien",
+              subcontent: `
+                Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind z.B. Browsertyp, Hostname des zugreifenden Rechners, und Uhrzeit der Serveranfrage.
+              `,
+            },
+          ],
         },
         {
           heading: "4. Analyse-Tools und Werbung",
@@ -56,18 +68,30 @@ export default function Datenschutz() {
           heading: "2. General Information and Mandatory Details",
           content: `
             The operators of these pages take the protection of your personal data very seriously. We handle your personal data confidentially and in accordance with legal data protection regulations and this privacy policy.
+            Responsible Party: AMG Human Resources and Assets GmbH, Seegefelder Weg 353, 13591 Berlin.
           `,
         },
         {
           heading: "3. Data Collection on Our Website",
-          content: `
-            Cookies and server log files are used to collect data for providing and analyzing our service. For more details, refer to the subsections.
-          `,
+          subsections: [
+            {
+              subheading: "Cookies",
+              subcontent: `
+                These web pages partially use so-called cookies. Cookies do not harm your computer and do not contain viruses. Cookies serve to make our offer more user-friendly, effective, and secure.
+              `,
+            },
+            {
+              subheading: "Server Log Files",
+              subcontent: `
+                The provider of these pages automatically collects and stores information in so-called server log files, which your browser automatically transmits to us. Examples include browser type, hostname of the accessing computer, and time of the server request.
+              `,
+            },
+          ],
         },
         {
           heading: "4. Analysis Tools and Advertising",
           content: `
-            Tools like AWStats and Google AdWords are used on our website to anonymously analyze user data and improve our services.
+            Tools such as AWStats and Google AdWords are used on our website to analyze user data anonymously and improve our services.
           `,
         },
         {
@@ -89,6 +113,13 @@ export default function Datenschutz() {
         <div key={index} className="bg-white p-6 rounded shadow mb-4">
           <h2 className="text-xl font-semibold mb-2">{section.heading}</h2>
           <p>{section.content}</p>
+          {section.subsections &&
+            section.subsections.map((sub, subIndex) => (
+              <div key={subIndex} className="mt-4">
+                <h3 className="text-lg font-semibold mb-2">{sub.subheading}</h3>
+                <p>{sub.subcontent}</p>
+              </div>
+            ))}
         </div>
       ))}
     </div>

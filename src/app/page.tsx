@@ -4,9 +4,12 @@ import React, { useState } from "react";
 import hr1 from "/public/hr1.jpeg";
 import hr2 from "/public/hr.jpeg";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const { language } = useLanguage();
+  const router = useRouter();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqItems = [
@@ -79,11 +82,46 @@ export default function Home() {
   return (
     <>
       <div className="container mx-auto my-8">
-        <h1 className="text-4xl font-bold text-center my-[300px]">
-          {language === "DE"
-            ? "Willkommen bei AMG HR – Ihrem Partner bei der Suche nach außergewöhnlichen Talenten"
-            : "Welcome to AMG HR - Your Partner in Finding Exceptional Talent"}
-        </h1>
+        <section className="relative h-screen flex items-center justify-center overflow-hidden my-4">
+          {/* Background Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            className="absolute z-0 w-full h-full object-cover"
+          >
+            <source src="/v2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+
+          {/* Content */}
+          <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 animate-fade-in-up">
+              {language === "DE"
+                ? "Willkommen bei AMG HR"
+                : "Welcome to AMG HR"}
+            </h1>
+            <p className="text-xl sm:text-2xl md:text-3xl text-white mb-8 animate-fade-in-up animation-delay-200">
+              {language === "DE"
+                ? "Ihr Partner für die Suche nach außergewöhnlichen Talenten"
+                : "Your Partner in Finding Exceptional Talent"}
+            </p>
+            <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 animate-fade-in-up animation-delay-400">
+              {language === "DE"
+                ? "Wir verbinden Spitzenkräfte mit führenden Unternehmen und sorgen für die perfekte Übereinstimmung Ihrer organisatorischen Bedürfnisse."
+                : "We connect top-tier professionals with leading companies, ensuring the perfect match for your organizational needs."}
+            </p>
+            <button
+              onClick={() => router.push("/contact")} // Replace with actual logic
+              className="bg-white text-blue-600 hover:bg-blue-100 transition-colors duration-300 text-lg py-3 px-8 rounded-full font-semibold animate-fade-in-up animation-delay-600"
+            >
+              {language === "DE" ? "Loslegen" : "Get Started"}
+            </button>
+          </div>
+        </section>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white shadow-md rounded-lg overflow-hidden">
             <div className="bg-gray-200 px-6 py-4 font-bold">
@@ -135,56 +173,119 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* cards appear here */}
-
-      <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        <div className="bg-gray-200 px-6 py-4 font-bold">
-          <h2 className="text-lg">
-            {language === "DE"
-              ? "Häufig gestellte Fragen"
-              : "Frequently Asked Questions"}
-          </h2>
-        </div>
-        <div className="p-6 space-y-4">
-          {faqItems.map((item, index) => (
-            <div key={index} className="border-b pb-4 last:border-b-0">
-              <button
-                onClick={() => toggleAccordion(index)}
-                className="w-full flex justify-between items-center font-bold text-left hover:text-blue-600 transition-colors duration-300"
-              >
-                <span>
-                  {language === "DE" ? item.question.DE : item.question.EN}
-                </span>
-                <svg
-                  className={`h-6 w-6 text-gray-500 transform transition-transform duration-300 ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              {openIndex === index && (
-                <div className="mt-2 text-gray-600 transition-all duration-300 ease-in-out">
-                  {language === "DE" ? item.answer.DE : item.answer.EN}
-                </div>
-              )}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
+          {[
+            {
+              title: {
+                DE: "Zugang qualifizierter Kandidaten",
+                EN: "Access to Qualified Candidates",
+              },
+              content: {
+                DE:
+                  "„Nutzen Sie unser umfangreiches Netzwerk hochqualifizierter Kandidaten, die sorgfältig ausgewählt wurden, um Ihren Geschäftsanforderungen gerecht zu werden. Erhalten Sie Zugang zu Top-Talenten, die bereit sind, Ihr Unternehmen voranzutreiben.“",
+                EN:
+                  "“Leverage our extensive network of highly qualified candidates carefully selected to meet your business requirements. Gain access to top talent ready to drive your company forward.”",
+              },
+              image: hr1,
+            },
+            {
+              title: {
+                DE: "Nachgewiesener Erfolgskurs",
+                EN: "Proven Track Record of Success",
+              },
+              content: {
+                DE:
+                  "„Erreichen Sie Ihre Ziele mit einem vertrauenswürdigen Partner, der nachweislich erfolgreich ist. Zuverlässige und effiziente Lösungen, die Ergebnisse liefern, die Ihre Erwartungen übertreffen.“",
+                EN:
+                  "“Achieve your goals with a trusted partner proven to succeed. Reliable and efficient solutions that deliver results beyond your expectations.”",
+              },
+              image: hr2,
+            },
+            {
+              title: {
+                DE: "Kompetente Anleitung und Unterstützung",
+                EN: "Expert Guidance and Support",
+              },
+              content: {
+                DE:
+                  "„Navigieren Sie Ihren Weg zum Erfolg mit fachkundiger Anleitung und Unterstützung bei jedem Schritt. Vertrauen Sie auf unsere erfahrenen Fachleute, die Ihnen persönliche Beratung und Betreuung bieten.“",
+                EN:
+                  "“Navigate your way to success with expert guidance and support every step of the way. Rely on our experienced professionals for personalized advice and care.”",
+              },
+              image: hr1,
+            },
+          ].map((card, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-md rounded-lg p-6 text-center space-y-4"
+            >
+              <div className="flex justify-center">
+                <Image
+                  src={card.image}
+                  alt=""
+                  className="rounded-full w-16 h-16"
+                />
+              </div>
+              <h3 className="text-xl font-bold">
+                {language === "DE" ? card.title.DE : card.title.EN}
+              </h3>
+              <p className="text-gray-600">
+                {language === "DE" ? card.content.DE : card.content.EN}
+              </p>
             </div>
           ))}
         </div>
-        <div className="flex justify-end px-6 py-4">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            {language === "DE" ? "Kontaktieren Sie uns" : "Contact us"}
-          </button>
+
+        <div className="bg-white shadow-md rounded-lg overflow-hidden">
+          <div className="bg-gray-200 px-6 py-4 font-bold">
+            <h2 className="text-lg">
+              {language === "DE"
+                ? "Häufig gestellte Fragen"
+                : "Frequently Asked Questions"}
+            </h2>
+          </div>
+          <div className="p-6 space-y-4">
+            {faqItems.map((item, index) => (
+              <div key={index} className="border-b pb-4 last:border-b-0">
+                <button
+                  onClick={() => toggleAccordion(index)}
+                  className="w-full flex justify-between items-center font-bold text-left hover:text-blue-600 transition-colors duration-300"
+                >
+                  <span>
+                    {language === "DE" ? item.question.DE : item.question.EN}
+                  </span>
+                  <svg
+                    className={`h-6 w-6 text-gray-500 transform transition-transform duration-300 ${
+                      openIndex === index ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                {openIndex === index && (
+                  <div className="mt-2 text-gray-600 transition-all duration-300 ease-in-out">
+                    {language === "DE" ? item.answer.DE : item.answer.EN}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-end px-6 py-4">
+            <Link
+              href="/contact"
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+            >
+              {language === "DE" ? "Kontaktieren Sie uns" : "Contact Us"}
+            </Link>
+          </div>
         </div>
       </div>
     </>
