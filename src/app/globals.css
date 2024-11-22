@@ -44,3 +44,8 @@
 .animation-delay-600 {
   animation-delay: 0.6s;
 }
+
+.emoji {
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji",
+    sans-serif;
+}

@@ -24,7 +24,15 @@ export default function Header() {
             className="text-gray-400 hover:text-white transition-colors"
             onClick={toggleLanguage}
           >
-            {language === "DE" ? "EN 🇬🇧" : "DE 🇩🇪"}
+            {language === "DE" ? (
+              <span>
+                EN <span className="emoji">🇬🇧</span>
+              </span>
+            ) : (
+              <span>
+                DE <span className="emoji">🇩🇪</span>
+              </span>
+            )}
           </button>
           <Link
             href="/contact"
