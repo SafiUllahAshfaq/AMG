@@ -83,16 +83,28 @@ export default function Home() {
     <>
       <div className="container mx-auto my-8">
         <section className="relative h-screen flex items-center justify-center overflow-hidden my-4">
-          {/* Background Video */}
+          {/* Background Video for Larger Screens */}
           <video
             autoPlay
             loop
             muted
-            className="absolute z-0 w-full h-full object-cover"
+            className="absolute z-0 w-full h-full object-cover hidden sm:block"
           >
             <source src="/v2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+
+          {/* Background Replacement for Mobile */}
+          <div className="absolute z-0 w-full h-full bg-gradient-to-b from-blue-600 to-purple-800 block sm:hidden">
+            {/* You can replace this with an image */}
+            <div className="flex items-center justify-center h-full">
+              {/* <img
+                src="/placeholder-mobile.png"
+                alt="Mobile Background"
+                className="w-3/4 max-w-xs"
+              /> */}
+            </div>
+          </div>
 
           {/* Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
@@ -115,13 +127,14 @@ export default function Home() {
                 : "We connect top-tier professionals with leading companies, ensuring the perfect match for your organizational needs."}
             </p>
             <button
-              onClick={() => router.push("/contact")} // Replace with actual logic
+              onClick={() => router.push("/contact")}
               className="bg-white text-blue-600 hover:bg-blue-100 transition-colors duration-300 text-lg py-3 px-8 rounded-full font-semibold animate-fade-in-up animation-delay-600"
             >
               {language === "DE" ? "Loslegen" : "Get Started"}
             </button>
           </div>
         </section>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white shadow-md rounded-lg overflow-hidden">
             <div className="bg-gray-200 px-6 py-4 font-bold">

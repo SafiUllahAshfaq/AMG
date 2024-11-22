@@ -2,14 +2,17 @@
 import React from "react";
 import { useLanguage } from "./LanguageProvider";
 import Link from "next/link";
+import logo from "/public/amg-logo.png";
+import Image from "next/image";
 
 export default function Header() {
   const { language, toggleLanguage } = useLanguage();
 
   return (
-    <header className="bg-gray-800 text-white py-4 sticky top-0 left-0 right-0 z-20">
+    <header className="bg-gray-200 text-gray-800 py-4 sticky top-0 left-0 right-0 z-40">
       <div className="container mx-auto flex justify-between items-center">
-        <div>
+        <div className="flex items-center gap-2">
+          <Image src={logo} alt="" width={50} height={50} />
           <Link href="/">
             {language === "DE"
               ? "AMG Personaldienstleistungen"
