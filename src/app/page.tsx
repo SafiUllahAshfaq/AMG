@@ -1,7 +1,7 @@
 "use client";
 import { useLanguage } from "@/components/LanguageProvider";
 import React, { useState } from "react";
-import hr1 from "/public/hr1.jpeg";
+import hr1 from "/public/hr.png";
 import hr2 from "/public/hr.jpeg";
 import Image from "next/image";
 import Link from "next/link";
@@ -113,8 +113,8 @@ export default function Home() {
           <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 animate-fade-in-up">
               {language === "DE"
-                ? "Willkommen bei AMG HR"
-                : "Welcome to AMG HR"}
+                ? "Willkommen bei Asset Star HR"
+                : "Welcome to Asset Star HR"}
             </h1>
             <p className="text-xl sm:text-2xl md:text-3xl text-white mb-8 animate-fade-in-up animation-delay-200">
               {language === "DE"
@@ -140,8 +140,8 @@ export default function Home() {
             <div className="bg-gray-200 px-6 py-4 font-bold">
               <h2 className="text-lg">
                 {language === "DE"
-                  ? "Willkommen bei AMG HR – Ihrem Partner bei der Suche nach außergewöhnlichen Talenten"
-                  : "Welcome to AMG HR - Your Partner in Finding Exceptional Talent"}
+                  ? "Willkommen bei Asset Star HR – Ihrem Partner bei der Suche nach außergewöhnlichen Talenten"
+                  : "Welcome to Asset Star HR - Your Partner in Finding Exceptional Talent"}
               </h2>
             </div>
             <div className="p-6">

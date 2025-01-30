@@ -2,7 +2,7 @@
 import React from "react";
 import { useLanguage } from "./LanguageProvider";
 import Link from "next/link";
-import logo from "/public/amg-logo.png";
+import logo from "/public/AssetStar-logo.png";
 import Image from "next/image";
 
 export default function Header() {
@@ -15,8 +15,8 @@ export default function Header() {
           <Image src={logo} alt="" width={50} height={50} />
           <Link href="/">
             {language === "DE"
-              ? "AMG Personaldienstleistungen"
-              : "AMG HR Services"}
+              ? "Asset Star Personaldienstleistungen"
+              : "Asset Star HR Services"}
           </Link>
         </div>
         <div className="flex items-center space-x-4">

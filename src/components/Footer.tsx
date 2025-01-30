@@ -31,7 +31,7 @@ export default function Footer() {
           <h3 className="font-bold mb-2">
             {language === "DE" ? "Kontakt" : "Contact"}
           </h3>
-          <p>AMG HR – AMG Human Resources</p>
+          <p>Asset Star HR – Asset Star Human Resources</p>
           <p>Seegefelder Weg 353, 13591 Berlin</p>
           <p>Tel: +49 (0) 30 – 30837491</p>
         </div>

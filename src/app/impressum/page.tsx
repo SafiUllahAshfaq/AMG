@@ -10,7 +10,7 @@ export default function Impressum() {
     DE: {
       title: "Impressum",
       companyDetails: "Angaben gemäß § 5 TMG",
-      companyName: "AMG HR – AMG Human Resources und Vermögens GmbH",
+      companyName: "Asset Star HR – Asset Star Human Resources und Vermögens GmbH",
       address: "Seegefelder Weg 353, 13591 Berlin",
       representedBy: "Vertreten durch: Hasan Ali Awan",
       contact: "Kontakt:",
@@ -43,7 +43,7 @@ export default function Impressum() {
     EN: {
       title: "Legal Notice",
       companyDetails: "According to Section 5 TMG",
-      companyName: "AMG HR – AMG Human Resources and Assets GmbH",
+      companyName: "AMG HR – Asset Star Human Resources and Assets GmbH",
       address: "Seegefelder Weg 353, 13591 Berlin",
       representedBy: "Represented by: Hasan Ali Awan",
       contact: "Contact:",

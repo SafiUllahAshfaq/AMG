@@ -21,7 +21,7 @@ export default function Datenschutz() {
           heading: "2. Allgemeine Hinweise und Pflichtinformationen",
           content: `
             Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
-            Hinweis zur verantwortlichen Stelle: Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist AMG Human Resources und Vermögens GmbH, Seegefelder Weg 353, 13591 Berlin.
+            Hinweis zur verantwortlichen Stelle: Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist Asset Star Human Resources und Vermögens GmbH, Seegefelder Weg 353, 13591 Berlin.
           `,
         },
         {
@@ -68,7 +68,7 @@ export default function Datenschutz() {
           heading: "2. General Information and Mandatory Details",
           content: `
             The operators of these pages take the protection of your personal data very seriously. We handle your personal data confidentially and in accordance with legal data protection regulations and this privacy policy.
-            Responsible Party: AMG Human Resources and Assets GmbH, Seegefelder Weg 353, 13591 Berlin.
+            Responsible Party: Asset Star Human Resources and Assets GmbH, Seegefelder Weg 353, 13591 Berlin.
           `,
         },
         {

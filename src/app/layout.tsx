@@ -4,8 +4,8 @@ import Footer from "@/components/Footer";
 import LanguageProvider from "@/components/LanguageProvider";
 
 export const metadata = {
-  title: "AMG Personaldienstleistungen",
-  description: "AMG HR website with German and English translations.",
+  title: "Asset Star Personaldienstleistungen",
+  description: "Asset Star HR website with German and English translations.",
 };
 
 export default function RootLayout({
